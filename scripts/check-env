@@ -6,10 +6,12 @@ echo "installing nodejs, npm, and python3..."
 sudo apt install -y nodejs npm python3
 cd "$VH_ROOT/front"
 echo "installing frontend packages..."
+pwd
 npm install
 cd "$VH_ROOT/dev"
 echo "installing dev backend packages..."
-npm installing
+pwd
+npm install
 cd "$VH_ROOT/interpolator"
 echo "installing python packages..."
 python3 -m pip install -r requirements.txt
