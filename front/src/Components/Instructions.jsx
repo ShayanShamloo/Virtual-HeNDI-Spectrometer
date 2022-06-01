@@ -12,7 +12,7 @@ function Instructions (props) {
     );
 }
 
-// export default Instructions;
+export default Instructions;
 
 // import React from 'react'
 // import '../Style/Instructions.css'

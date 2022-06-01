@@ -1,13 +1,13 @@
 import React from 'react'
 import '../Style/VirtualHendiInterface.css'
 
-function Error (props) {
+export function Error (props) {
     return <div className="spinner-container">
             <img src="/virtual-hendi/error.png" className="error" alt="error"/>
             <label>Error fetching spectrum!</label>
         </div>
 }
-export default Error;
+// export Error;
 
 // import React from 'react'
 // import '../Style/VirtualHendiInterface.css'

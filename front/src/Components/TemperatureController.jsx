@@ -3,38 +3,24 @@ import '../Style/TemperatureController.css';
 import '../Style/VirtualHendiInterface.css';
 import AdjustableDigitalReadout from './AdjustableDigitalReadout';
 
-function TemperatureController() {
+function TemperatureController({id, temperature, setTemperature}) {
+
+    const MIN = 13.5
+    const MAX = 20
+
+    const butValid = (val) => Math.min(Math.max(val, MIN), MAX)
 
     // never used
-    const [temperature, setTemperature] = useState(13.5);
+    // const [temperature, setTemperature] = useState(13.5);
 
     // FIXME - parent={this}
     return(
-        <div className='temp-controller' id = {props.id}>
+        <div className='temp-controller' id = {id}>
             <div className='instrument-label-readout' id='temp-controller-temp'>
                 <label className='instrument-label'>Nozzle Temperature</label>
-                <AdjustableDigitalReadout parent={this} name="temperature" increment={0.5} state_to_mod='temperature' unit='K' min={13.5} max={20} digits={5}></AdjustableDigitalReadout>
+                <AdjustableDigitalReadout name="temperature" val={temperature} unit='K' digits={5} increment={() => setTemperature(butValid(temperature + 0.5))} decrement={() => setTemperature(butValid(temperature - 0.5))} handleChange={({target: {value}}) => setTemperature(butValid(value))}></AdjustableDigitalReadout>
             </div>
         </div>
     )
 }
-
-// export default class TemperatureController extends Component{
-//     constructor(props){
-//         super(props);
-//         this.props=props;
-//         this.state={
-//             temperature:13.5
-//         }
-//     }
-//     render(){
-//         return(
-//             <div className='temp-controller' id = {this.props.id}>
-//                 <div className='instrument-label-readout' id='temp-controller-temp'>
-//                     <label className='instrument-label'>Nozzle Temperature</label>
-//                     <AdjustableDigitalReadout parent={this} name="temperature" increment={0.5} state_to_mod='temperature' unit='K' min={13.5} max={20} digits={5}></AdjustableDigitalReadout>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
+export default TemperatureController
