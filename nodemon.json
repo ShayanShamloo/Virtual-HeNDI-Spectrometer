@@ -1,10 +1,7 @@
 {
-    "watch": [
-        "dev/",
-        "front/src/"
-    ],
-    "events":{
-        "restart": "cd ${VH_ROOT}/front/ && npm run build"
-    },
-    "ext": "js,jsx,json"
+  "watch": ["dev/", "front/src/"],
+  "events": {
+    "restart": "cd ${VH_ROOT}/front/ && npm run build"
+  },
+  "ext": "js,jsx,json"
 }

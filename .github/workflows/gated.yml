@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      
+
       - name: Install terraform v1.0.5
         run: |
           sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
@@ -26,12 +26,11 @@ jobs:
           aws-region: us-east-1
 
       - name: validate tf config
-        run: | 
+        run: |
           export VH_ROOT=$(scripts/get-root)
           cd "${VH_ROOT}/terraform"
           terraform init
           terraform validate
-      
+
       - name: validate build
         run: scripts/build
-
