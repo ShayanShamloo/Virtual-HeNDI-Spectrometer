@@ -1,82 +1,94 @@
-#main-virtual-hendi-interface-container{
-    display: flex;
-    flex-direction: row;
-    height: 100%;
+#main-virtual-hendi-interface-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
-#hendi-instrument{
-    position: relative;
+#hendi-instrument {
+  position: relative;
 }
-@media only screen and (max-width: 768px){
-    #main-virtual-hendi-interface-container{
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-    #hendi-instrument{
-        width: 95vw;
-    }
-    
-}
-
-#temperature-controller{
-    z-index:10;
-}
-#control-box{
-    margin-top: 2em;
+@media only screen and (max-width: 768px) {
+  #main-virtual-hendi-interface-container {
     display: flex;
     flex-direction: column;
+    height: 100%;
+  }
+  #hendi-instrument {
+    width: 95vw;
+  }
 }
-.temp-controller{
-    max-width:95vw;
+
+#temperature-controller {
+  z-index: 10;
 }
-.instrument-label-readout{
-    background-color: lightgray;
-    border: double black 1px;
-    padding: 0.5em;
-    margin: 0.5em;
-    font-family: 'digital', monospace;
+#control-box {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
 }
-.instrument-label{
-    font-weight: bold;
-    font-size: 2em;
-    font-style: italic;
+.temp-controller {
+  max-width: 95vw;
+}
+.instrument-label-readout {
+  background-color: lightgray;
+  border: double black 1px;
+  padding: 0.5em;
+  margin: 0.5em;
+  font-family: "digital", monospace;
+}
+.instrument-label {
+  font-weight: bold;
+  font-size: 2em;
+  font-style: italic;
 }
 .spinner {
-    width: 100px;
-    height: 100px;
-    -webkit-animation:spin 3s linear infinite;
-    -moz-animation:spin 3s linear infinite;
-    animation:spin 3s linear infinite;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 3s linear infinite;
+  -moz-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
 }
 .error {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 .spinner-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
 }
 .dygraph-label.dygraph-xlabel {
-    text-align: center;
+  text-align: center;
 }
 .dygraph-label.dygraph-ylabel {
-    text-align: center;
-    display: block;
-    transform: rotate(-90deg);
+  text-align: center;
+  display: block;
+  transform: rotate(-90deg);
 }
-.a-button{
-    background-color: lightgray;
-    border: 1px solid black;
-    border-radius: 2px;
+.a-button {
+  background-color: lightgray;
+  border: 1px solid black;
+  border-radius: 2px;
 }
-.a-button:hover{
-    background-color: gray;
+.a-button:hover {
+  background-color: gray;
 }
 
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

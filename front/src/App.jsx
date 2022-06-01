@@ -1,10 +1,8 @@
-import React from 'react';
-import VirtualHendiInterface from './Components/VirtualHendiInterface';
+import React from "react";
+import VirtualHendiInterface from "./Components/VirtualHendiInterface";
 
 function App() {
-  return (
-    <VirtualHendiInterface />
-  );
+  return <VirtualHendiInterface />;
 }
 
 export default App;
