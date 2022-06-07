@@ -40,7 +40,7 @@ function WavelengthController({
   return (
     <div className="temp-controller" id={id}>
       <div className="instrument-label-readout" id="temp-controller-temp">
-        <label className="instrument-label">Min Wavelength</label>
+        <label className="instrument-label">Min Wavenumber</label>
         <AdjustableDigitalReadout
           name="min_lambda"
           increment={incrementProp(min_lambda, setMinLambda)}
@@ -50,7 +50,7 @@ function WavelengthController({
           onChange={handleChange}
           val={min_lambda}
         ></AdjustableDigitalReadout>
-        <label className="instrument-label">Max Wavelength</label>
+        <label className="instrument-label">Max Wavenumber</label>
         <AdjustableDigitalReadout
           name="max_lambda"
           increment={incrementProp(max_lambda, setMaxLambda)}
