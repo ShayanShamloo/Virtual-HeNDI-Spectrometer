@@ -147,13 +147,13 @@ function Hendi({ id, seeOutside }) {
         alt="quadrupole"
         className={`hendi-component ${!seeOutside ? "" : "transparent"}`}
         id="hendi-quad"
-        src="/virtual-hendi/images/hendi-quad.png"
+        src="/virtual-hendi/images/hendi-quad.svg"
       />
       <img
         alt="laserbeam"
         className={`hendi-component ${!seeOutside ? "" : "transparent"}`}
         id="hendi-laserbeam"
-        src="/virtual-hendi/images/hendi-laserbeam.png"
+        src="/virtual-hendi/images/hendi-laserbeam.svg"
       />
       <img
         alt="OCS canister"
