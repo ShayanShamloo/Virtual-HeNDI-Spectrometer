@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../Style/Hendi.css";
+import { DopingDiffusionPump } from "./SVGComponents";
 import Tooltip from "./Tooltip";
 
 function Hendi({ id, seeOutside }) {
@@ -119,7 +120,7 @@ function Hendi({ id, seeOutside }) {
 
   return (
     <div className="hendi-box" id={id} onMouseMove={mouseMove}>
-      <img
+      {/* <img
         alt="background"
         className={`hendi-component ${bg ? "" : "transparent"}`}
         id="hendi-bg"
@@ -161,14 +162,15 @@ function Hendi({ id, seeOutside }) {
         id="hendi-ocs-canister"
         src="/virtual-hendi/images/hendi-ocs-canister.png"
         useMap="hendi-map"
-      />
-      <Tooltip
+      /> */}
+      <DopingDiffusionPump left={left} top={top}/>
+      {/* <Tooltip
         header={activeToolTipHeader}
         text={activeToolTipText}
         visible={toolTipActive}
         left={left}
         top={top}
-      ></Tooltip>
+      ></Tooltip> */}
       {seeOutside && (
         <div
           className="area-div"
