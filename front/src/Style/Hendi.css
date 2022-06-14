@@ -26,9 +26,9 @@
   /* border: dotted red 1px; */
   border-radius: 4px;
 }
-.area-div:hover {
+/* .area-div:hover {
   background-color: rgba(99, 245, 66, 0.25);
-}
+} */
 #hendi-ch-clickable {
   top: 0%;
   left: 79%;

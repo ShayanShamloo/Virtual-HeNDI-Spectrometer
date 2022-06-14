@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Style/Hendi.css";
-import { DopingDiffusionPump } from "./SVGComponents";
+import { DopingDiffusionPump, RotaryPump, TurboPump } from "./SVGComponents";
 import Tooltip from "./Tooltip";
 
 function Hendi({ id, seeOutside }) {
@@ -163,15 +163,18 @@ function Hendi({ id, seeOutside }) {
         src="/virtual-hendi/images/hendi-ocs-canister.png"
         useMap="hendi-map"
       /> */}
-      <DopingDiffusionPump left={left} top={top}/>
-      {/* <Tooltip
+      {/* <DopingDiffusionPump onMouseEnter={setActiveTooltip("detection")} onMouseLeave={setToolTipActive(false)}/> */}
+      <DopingDiffusionPump />
+      <TurboPump />
+      <RotaryPump />
+      <Tooltip
         header={activeToolTipHeader}
         text={activeToolTipText}
         visible={toolTipActive}
         left={left}
         top={top}
-      ></Tooltip> */}
-      {seeOutside && (
+      ></Tooltip>
+      {/* {seeOutside && (
         <div
           className="area-div"
           id="hendi-detection-clickable"
@@ -290,7 +293,7 @@ function Hendi({ id, seeOutside }) {
             setToolTipActive(false);
           }}
         ></div>
-      )}
+      )} */}
     </div>
   );
 }
