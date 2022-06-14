@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import {ReactComponent as DiffusionSVG} from './hendi-diffusion-pumps.svg';
-import {ReactComponent as TurboSVG} from './hendi-turbo-pump.svg';
-import {ReactComponent as RotarySVG} from './hendi-rotary-pump.svg';
-import Tooltip from "./Tooltip";
+import {ReactComponent as DopingDiffusionSVG} from './svgs/hendi-diffusion-doping-pump.svg';
+import {ReactComponent as SourceDiffusionSVG} from './svgs/hendi-diffusion-source-pump.svg';
+import {ReactComponent as TurboSVG} from './svgs/hendi-turbo-pump.svg';
+import {ReactComponent as RotarySVG} from './svgs/hendi-rotary-pump.svg';
 
 export class DopingDiffusionPump extends Component {
 
@@ -22,7 +22,30 @@ export class DopingDiffusionPump extends Component {
     render() {
        return (
             <div>
-                <DiffusionSVG  fill={this.state.color} onClick={this.handleClick} />
+                <DopingDiffusionSVG  fill={this.state.color} onClick={this.handleClick} />
+            </div>);
+    }
+}
+
+export class SourceDiffusionPump extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            clicked: false,
+            color: '#333333'
+        };
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+       if (this.state.clicked ? this.setState({clicked: false, color: '#333333'}) : this.setState({clicked: true, color: '#ffff00'}));
+    }
+
+    render() {
+       return (
+            <div>
+                <SourceDiffusionSVG  fill={this.state.color} onClick={this.handleClick} />
             </div>);
     }
 }
@@ -34,13 +57,13 @@ export class TurboPump extends Component {
         this.state = {
             clicked: false,
             color: '#000',
-            width: '2'
+            width: '1'
         };
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
-       if (this.state.clicked ? this.setState({clicked: false, color: '#000', width: '2'}) : this.setState({clicked: true, color: '#ffcc00', width: '10'}));
+       if (this.state.clicked ? this.setState({clicked: false, color: '#000', width: '1'}) : this.setState({clicked: true, color: '#ffcc00', width: '5'}));
     }
 
     render() {

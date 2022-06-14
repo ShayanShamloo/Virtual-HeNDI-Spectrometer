@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Style/Hendi.css";
-import { DopingDiffusionPump, RotaryPump, TurboPump } from "./SVGComponents";
+import { DopingDiffusionPump, RotaryPump, SourceDiffusionPump, TurboPump } from "./SVGComponents";
 import Tooltip from "./Tooltip";
 
 function Hendi({ id, seeOutside }) {
@@ -165,6 +165,7 @@ function Hendi({ id, seeOutside }) {
       /> */}
       {/* <DopingDiffusionPump onMouseEnter={setActiveTooltip("detection")} onMouseLeave={setToolTipActive(false)}/> */}
       <DopingDiffusionPump />
+      <SourceDiffusionPump />
       <TurboPump />
       <RotaryPump />
       <Tooltip
