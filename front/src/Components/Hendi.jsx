@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../Style/Hendi.css";
-import { DopingDiffusionPump, RotaryPump, SourceDiffusionPump, TurboPump } from "./SVGComponents";
+import { DopingDiffusionPump, RotaryPump, SourceDiffusionPump, SVGComponent, TurboPump } from "./SVGComponents";
 import Tooltip from "./Tooltip";
+import {svgLibrary} from "./SVGLibrary";
 
 function Hendi({ id, seeOutside }) {
   const bg = true;
@@ -164,10 +165,6 @@ function Hendi({ id, seeOutside }) {
         useMap="hendi-map"
       /> */}
       {/* <DopingDiffusionPump onMouseEnter={setActiveTooltip("detection")} onMouseLeave={setToolTipActive(false)}/> */}
-      <DopingDiffusionPump />
-      <SourceDiffusionPump />
-      <TurboPump />
-      <RotaryPump />
       <Tooltip
         header={activeToolTipHeader}
         text={activeToolTipText}
@@ -295,6 +292,13 @@ function Hendi({ id, seeOutside }) {
           }}
         ></div>
       )} */}
+
+      <SourceDiffusionPump className='svg'/>
+      <TurboPump className='svg'/>
+      <RotaryPump className='svg'/>
+      {/* <SVGComponent svgName="Rotary" /> */}
+      <DopingDiffusionPump className='svg'/>
+
     </div>
   );
 }
