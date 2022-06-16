@@ -293,11 +293,11 @@ function Hendi({ id, seeOutside }) {
         ></div>
       )} */}
 
-      <SourceDiffusionPump className='svg'/>
       <TurboPump className='svg'/>
-      <RotaryPump className='svg'/>
-      {/* <SVGComponent svgName="Rotary" /> */}
+      {/* <RotaryPump className='svg'/> */}
+      <SVGComponent svgName={Rotary} />
       <DopingDiffusionPump className='svg'/>
+      <SourceDiffusionPump className='svg'/>
 
     </div>
   );

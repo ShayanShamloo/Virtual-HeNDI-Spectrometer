@@ -50,7 +50,10 @@ export class SourceDiffusionPump extends Component {
 
     render() {
        return (       
-            <SourceDiffusionSVG className={this.props.className} fill={this.state.color} onClick={this.handleClick} />
+            // <SourceDiffusionSVG className={this.props.className} fill={this.state.color} onClick={this.handleClick} />
+            <svg className={this.props.className} width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+              <path fill={this.state.color} onClick={this.handleClick} css="display:inline;stroke:#000;stroke-opacity:1;paint-order:markers stroke fill" d="M339.947 365.24v24.717h-.144c.096 1.88.192 3.758.289 5.18.096 1.421.192 2.384.578 3.492a10.487 10.487 0 0 0 1.976 3.396c.916 1.036 2.071 1.855 3.42 2.674 1.35.82 2.892 1.638 4.747 2.602a280.11 280.11 0 0 0 6.046 3.058c2.024.988 3.903 1.856 5.493 3.012 1.59 1.157 2.889 2.602 4.093 3.758 1.205 1.156 2.313 2.023 2.89 3.324.32.72.471 1.565.544 2.33v11.93h-9.59v-9.096a.476.476 0 0 0-.476-.476h-9.264a.476.476 0 0 0-.477.476v23.893c0 .263.213.476.477.476h9.264a.476.476 0 0 0 .476-.476v-4.688h9.59v8.051c0 1.108.892 2 2 2h36.217c1.108 0 2-.892 2-2v-27.916c.18-.129.164-.328.156-.64-.024-.867.024-2.602.602-3.903.577-1.3 1.686-2.168 2.89-3.324 1.205-1.156 2.506-2.601 4.096-3.758 1.59-1.157 3.469-2.024 5.492-3.012a280.11 280.11 0 0 0 6.047-3.058c1.855-.964 3.395-1.783 4.744-2.602 1.35-.819 2.506-1.638 3.422-2.674a10.48 10.48 0 0 0 1.975-3.396c.385-1.108.483-2.071.58-3.492.096-1.422.192-3.302.289-5.182h-.28V365.24H339.947z"/>
+            </svg>
             );
     }
 }
@@ -101,26 +104,5 @@ export class RotaryPump extends Component {
     }
 }
 
-// export class SVGComponent extends Component {
-//     // constructor(props) {
-//     //     super(props);
-//     //     this.state = {
-//     //         clicked: false,
-//     //         color: '#000',
-//     //         width: '1'
-//     //     };
-//     //     this.handleClick = this.handleClick.bind(this);
-//     // }
 
-//     // handleClick() {
-//     //    if (this.state.clicked ? this.setState({clicked: false, color: '#000', width: '1'}) : this.setState({clicked: true, color: '#ffcc00', width: '5'}));
-//     // }
-
-//     render() {
-//         const Component = this.props.svgName;
-//        return (
-//             <Component />
-//             // <Component className={this.props.className} stroke={this.state.color} stroke-width={this.state.width} onClick={this.handleClick} />
-//             );
-//     }
-// }
+// Generalization attempt
