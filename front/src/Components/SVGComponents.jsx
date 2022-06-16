@@ -6,7 +6,7 @@ import {ReactComponent as RotarySVG} from './svgs/hendi-rotary-pump.svg';
 
 // Generalization attempt
 
-export default function SVGComponent({part, style, click, className}) { // Style is the intial stroke
+export default function SVGComponent({part, style, click}) { // Style is the intial stroke
     const [toggled, setToggled] = useState(false);
 
     const svgParts = {
@@ -22,6 +22,6 @@ export default function SVGComponent({part, style, click, className}) { // Style
 
     const Component = svgParts[part];
     
-    return <Component className={className} style={{...style, stroke: toggled ? 'yellow' : style?.stroke ?? 'black'}} onClick={click ?? handleClick} />
+    return <Component className='svg' style={{...style, stroke: toggled ? 'blue' : style?.stroke ?? 'black', strokeWidth: toggled ? '5' : style?.strokeWidth ?? '1'}} onClick={click ?? handleClick} />
 
 }
