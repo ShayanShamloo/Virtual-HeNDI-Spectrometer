@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../Style/Hendi.css";
-import { DopingDiffusionPump, RotaryPump, SourceDiffusionPump, SVGComponent, TurboPump } from "./SVGComponents";
+import { DopingDiffusionPump, RotaryPump, SourceDiffusionPump, TurboPump } from "./SVGComponents";
+import SVGComponent from "./SVGComponents";
 import Tooltip from "./Tooltip";
-import {svgLibrary} from "./SVGLibrary";
 
 function Hendi({ id, seeOutside }) {
   const bg = true;
@@ -293,11 +293,14 @@ function Hendi({ id, seeOutside }) {
         ></div>
       )} */}
 
-      <TurboPump className='svg'/>
-      {/* <RotaryPump className='svg'/> */}
-      <SVGComponent svgName={Rotary} />
-      <DopingDiffusionPump className='svg'/>
-      <SourceDiffusionPump className='svg'/>
+      {/* <TurboPump className='svg'/>
+      <RotaryPump className='svg'/> */}
+      {/* <DopingDiffusionPump className='svg'/> */}
+      {/* <SourceDiffusionPump className='svg'/> */}
+      <SVGComponent className='svg' part='ddpump' />
+      <SVGComponent className='svg' part='sdpump' />
+      <SVGComponent className='svg' part='tpump' />
+      <SVGComponent className='svg' part='rpump' />
 
     </div>
   );
