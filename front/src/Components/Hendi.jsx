@@ -163,8 +163,7 @@ function Hendi({ id, seeOutside }) {
         id="hendi-ocs-canister"
         src="/virtual-hendi/images/hendi-ocs-canister.png"
         useMap="hendi-map"
-      /> */}
-      {/* <DopingDiffusionPump onMouseEnter={setActiveTooltip("detection")} onMouseLeave={setToolTipActive(false)}/> */}
+      />
       <Tooltip
         header={activeToolTipHeader}
         text={activeToolTipText}
@@ -172,7 +171,7 @@ function Hendi({ id, seeOutside }) {
         left={left}
         top={top}
       ></Tooltip>
-      {/* {seeOutside && (
+      {seeOutside && (
         <div
           className="area-div"
           id="hendi-detection-clickable"
@@ -292,15 +291,18 @@ function Hendi({ id, seeOutside }) {
           }}
         ></div>
       )} */}
-
-      {/* <TurboPump className='svg'/>
-      <RotaryPump className='svg'/> */}
-      {/* <DopingDiffusionPump className='svg'/> */}
-      {/* <SourceDiffusionPump className='svg'/> */}
+      <SVGComponent className='click-through' part='base' />
+      <SVGComponent className='click-through' part='sourcechamber' />
+      <SVGComponent className='click-through' part='dopingchamber' />
+      <SVGComponent className='click-through' part='detectionchamber' />
+      <SVGComponent className='click-through' part='lasersymbol' />
+      <SVGComponent className='click-through' part='rpump' />
       <SVGComponent className='click-through' part='ddpump' />
       <SVGComponent className='click-through' part='sdpump' />
       <SVGComponent className='click-through' part='tpump' />
-      <SVGComponent className='click-through' part='rpump' />
+      <SVGComponent className='click-through' part='laser' style={{stroke:'#fff0'}} /> 
+      {/* laser's stroke is currently set to transparent */}
+
     </div>
   );
 }
