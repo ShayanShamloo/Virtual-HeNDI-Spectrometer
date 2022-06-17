@@ -6,7 +6,7 @@ function Tooltip({ header, text, visible, left, top }) {
     return (
       <div className="tooltip" style={{ left, top }}>
         <label>{header}</label>
-        {text}
+        <p>{text}</p>
       </div>
     );
   } else {

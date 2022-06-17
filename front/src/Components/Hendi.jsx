@@ -291,16 +291,16 @@ function Hendi({ id, seeOutside }) {
           }}
         ></div>
       )} */}      
-      <SVGComponent className='click-through' part='laserexterior' style={{stroke:'#fff0'}} /> 
-      <SVGComponent className='click-through' part='base' />
-      <SVGComponent className='click-through' part='lasersymbol' />
-      <SVGComponent className='click-through' part='rpump' />
-      <SVGComponent className='click-through' part='ddpump' />
-      <SVGComponent className='click-through' part='sdpump' />
-      <SVGComponent className='click-through' part='tpump' />
-      <SVGComponent className='click-through' part='sourcechamber' />
-      <SVGComponent className='click-through' part='dopingchamber' />
-      <SVGComponent className='click-through' part='detectionchamber' />
+      <SVGComponent style={{top:'0', stroke:'#fff0'}} className='click-through' part='laserexterior' /> 
+      <SVGComponent style={{top:'0'}} className='click-through' part='base' />
+      <SVGComponent style={{top:'0'}} className='click-through' part='lasersymbol' />
+      <SVGComponent style={{top:'0'}} className='click-through' part='rpump' />
+      <SVGComponent style={{top:'0'}} className='click-through' part='ddpump' />
+      <SVGComponent style={{top:'0'}} className='click-through' part='sdpump' />
+      <SVGComponent style={{top:'0'}} className='click-through' part='tpump' />
+      <SVGComponent style={{top:'0'}} className='click-through' part='sourcechamber' />
+      <SVGComponent style={{top:'0'}} className='click-through' part='dopingchamber' />
+      <SVGComponent style={{top:'0'}} className='click-through' part='detectionchamber'/>
 
     </div>
   );
