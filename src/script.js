@@ -1,3 +1,5 @@
+import Big from "big.js";
+
 Big.max = function () {
   var i,
     y,
@@ -21,7 +23,7 @@ Big.min = function () {
 };
 
 // when "Calculate Spectrum" is pressed, fetch proper .dat file or interpolate
-async function calculateSpectrum (temperature, min_lambda, max_lambda) {
+export async function calculateSpectrum(temperature, min_lambda, max_lambda) {
   const values = {
     temperature, // default 13.5
     min_lambda, // default 2030
@@ -37,16 +39,17 @@ async function calculateSpectrum (temperature, min_lambda, max_lambda) {
   // The four .dat files: 13.5, 16, 18, 20
   // use matching .dat file if the requested temperature matches
   if (
-    values.temperature == "13.5" ||
-    values.temperature == "16" ||
-    values.temperature == "18" ||
-    values.temperature == "20"
+    values.temperature === 13.5 ||
+    values.temperature === 16 ||
+    values.temperature === 18 ||
+    values.temperature === 20
   ) {
     console.log("  number matches existing .dat");
     console.log("    temperature: " + values.temperature);
 
     const dataObject = await fetchDataFile(values.url, values.temperature);
-    // TODO --> Send file to graph
+
+    return dataObject.data1;
 
     // interpolate .dat file if the requested temperature does not match
   } else {
@@ -61,36 +64,33 @@ async function calculateSpectrum (temperature, min_lambda, max_lambda) {
       temp1 = 13.5;
       temp2 = 16;
     } else if (values.temperature > 16 && values.temperature < 18) {
-      console.log("    temperature is between 13.5 and 16");
+      console.log("    temperature is between 16 and 18");
       temp1 = 16;
       temp2 = 18;
     } else if (values.temperature > 18 && values.temperature < 20) {
-      console.log("    temperature is between 13.5 and 16");
+      console.log("    temperature is between 18 and 20");
       temp1 = 18;
       temp2 = 20;
     }
 
     const dataObject = await fetchDataFile(values.url, temp1, temp2);
 
-    console.log(new Date());
+    console.log("starting new file");
     const interpolatedSpectrum = interpolateValue(
       dataObject,
       values,
       temp1,
       temp2
     );
-    console.log(new Date());
-
-    console.log(interpolatedSpectrum);
-
+    console.log("ending new file");
     return interpolatedSpectrum;
   }
-};
+}
 
 // constructs URLs for the .dat files. Performs fetch request to obtain the .dat files.
 // https://www.topcoder.com/thrive/articles/fetch-api-javascript-how-to-make-get-and-post-requests
 // https://www.javascripttutorial.net/javascript-fetch-api/
-async function fetchDataFile(baseURL, temp1, temp2) {
+export async function fetchDataFile(baseURL, temp1, temp2) {
   let url1, url2;
   let response1, response2;
   let data1, data2;
@@ -103,7 +103,7 @@ async function fetchDataFile(baseURL, temp1, temp2) {
     console.log("  response is good! Response: " + response1.status);
 
   data1 = await response1.text();
-  dataObject = {
+  let dataObject = {
     data1,
   };
   if (temp2) {
@@ -152,11 +152,12 @@ function fileBounds(temp) {
         start: new Big("2040.3401"),
         end: new Big("2087.6247"),
       };
+    default:
+      throw new Error(`no data for given temp: ${temp}`);
   }
-  throw `no data for given temp: ${temp}`;
 }
 
-function interpolateValue(dataObject, values, temp1, temp2) {
+export function interpolateValue(dataObject, values, temp1, temp2) {
   // determine the start and end of fileX and fileY
   let fileXBounds = fileBounds(temp1);
   let fileYBounds = fileBounds(temp2);
@@ -198,6 +199,7 @@ function interpolateValue(dataObject, values, temp1, temp2) {
   const scalingFactor = new Big(normalizeTr.div(deltaT));
 
   let finalSpectrum = "";
+  let d1Value, d2Value;
   for (let i = fileStart; i < fileEnd; i = i.add(0.0001)) {
     d1Value = new Big(d1.get(i.toString()));
     d2Value = new Big(d2.get(i.toString()));
@@ -207,7 +209,7 @@ function interpolateValue(dataObject, values, temp1, temp2) {
       d1Value.add(d2Value.minus(d1Value).times(scalingFactor))
     );
 
-    finalSpectrum += i + "\t" + answer + "\n";
+    finalSpectrum += i + "\t" + answer + "\r\n";
   }
 
   return finalSpectrum;
