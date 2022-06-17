@@ -4,7 +4,7 @@ import {ReactComponent as SourceDiffusionSVG} from './svgs/hendi-diffusion-sourc
 import {ReactComponent as TurboSVG} from './svgs/hendi-turbo-pump.svg';
 import {ReactComponent as RotarySVG} from './svgs/hendi-rotary-pump.svg';
 import {ReactComponent as LaserSymbolSVG} from './svgs/hendi-laser-symbol.svg';
-import {ReactComponent as LaserbeamSVG} from './svgs/hendi-laserbeam.svg';
+import {ReactComponent as LaserbeamExteriorSVG} from './svgs/hendi-laser-exterior-view.svg';
 import {ReactComponent as BaseSVG} from './svgs/hendi-not-clickable.svg';
 import {ReactComponent as SourceChamberSVG} from './svgs/hendi-source-chamber.svg';
 import {ReactComponent as DopingChamberSVG} from './svgs/hendi-doping-chamber.svg';
@@ -19,7 +19,7 @@ export default function SVGComponent({part, style, click, startColor}) { // Styl
         'tpump': TurboSVG,
         'rpump': RotarySVG,
         'lasersymbol': LaserSymbolSVG,
-        'laser': LaserbeamSVG,
+        'laserexterior': LaserbeamExteriorSVG,
         'sourcechamber': SourceChamberSVG,
         'dopingchamber': DopingChamberSVG,
         'detectionchamber': DetectionChamberSVG,
@@ -32,6 +32,6 @@ export default function SVGComponent({part, style, click, startColor}) { // Styl
 
     const Component = svgParts[part];
 
-    return <Component className='svg' viewBox='-70 90 650 450' style={{...style, stroke: toggled ? 'blue' : style?.stroke ?? 'black', strokeWidth: toggled ? '5' : style?.strokeWidth ?? '1'}} onClick={click ?? handleClick} />
-
+    return <Component className='svg' viewBox='-70 110 650 450' style={{...style, stroke: toggled ? 'blue' : style?.stroke ?? 'black', strokeWidth: toggled ? '5' : style?.strokeWidth ?? '1'}} onClick={click ?? handleClick} />
+    // In the SVG files, you must remove the stroke and stroke-height of the element you want outlined and you must remove the  height an width from the very first line to get the SVG to use the veiewbox and scale properly
 }

@@ -290,7 +290,8 @@ function Hendi({ id, seeOutside }) {
             setToolTipActive(false);
           }}
         ></div>
-      )} */}
+      )} */}      
+      <SVGComponent className='click-through' part='laserexterior' style={{stroke:'#fff0'}} /> 
       <SVGComponent className='click-through' part='base' />
       <SVGComponent className='click-through' part='sourcechamber' />
       <SVGComponent className='click-through' part='dopingchamber' />
@@ -300,7 +301,6 @@ function Hendi({ id, seeOutside }) {
       <SVGComponent className='click-through' part='ddpump' />
       <SVGComponent className='click-through' part='sdpump' />
       <SVGComponent className='click-through' part='tpump' />
-      <SVGComponent className='click-through' part='laser' style={{stroke:'#fff0'}} /> 
       {/* laser's stroke is currently set to transparent */}
 
     </div>
