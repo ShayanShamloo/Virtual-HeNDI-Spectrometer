@@ -32,6 +32,6 @@ export default function SVGComponent({part, style, click, startColor}) { // Styl
 
     const Component = svgParts[part];
 
-    return <Component className='svg' style={{...style, stroke: toggled ? 'blue' : style?.stroke ?? 'black', strokeWidth: toggled ? '5' : style?.strokeWidth ?? '1'}} onClick={click ?? handleClick} />
+    return <Component className='svg' viewBox='-70 90 650 450' style={{...style, stroke: toggled ? 'blue' : style?.stroke ?? 'black', strokeWidth: toggled ? '5' : style?.strokeWidth ?? '1'}} onClick={click ?? handleClick} />
 
 }
