@@ -8,7 +8,7 @@ import Spectrum from "./Spectrum";
 import Instructions from "./Instructions";
 import { Error } from "./Error";
 
-import { calculateSpectrum } from "../script";
+import { calculateSpectrum } from "../dataInterpolation";
 
 function VirtualHendiInterface() {
   const hendiRef = React.createRef();
@@ -43,33 +43,22 @@ function VirtualHendiInterface() {
 
   const getSpectrum = async () => {
     setLoadingSpectrum(true);
-    setSpectrum(await calculateSpectrum(temperature, min_lambda, max_lambda));
-    setLoadingSpectrum(false);
-    setSpectrumError(false);
 
-    //   .get(url)
-    //   .then((resp1) => {
-    //     // const urlToUse = `https://virtual-hendi.isaac-j-miller.com${resp1.data.url}`;
-    //     const urlToUse = resp1.data.url;
-    //     axios
-    //       .get(urlToUse)
-    //       .then((resp) => {
-    //         console.log("received spectrum");
-    //         setSpectrum(resp.data);
-    //         setLoadingSpectrum(false);
-    //         setSpectrumError(false);
-    //       })
-    //       .catch((reason) => {
-    //         console.error("error loading spectrum:", reason);
-    //         setLoadingSpectrum(false);
-    //         setSpectrumError(true);
-    //       });
-    //   })
-    //   .catch((reason) => {
-    //     console.error("error triggering lambda:", reason);
-    //     setLoadingSpectrum(false);
-    //     setSpectrumError(true);
-    //   });
+    const spectrum = await calculateSpectrum(
+      temperature,
+      min_lambda,
+      max_lambda
+    );
+    if (spectrum) {
+      console.log("BAD");
+      setSpectrum(spectrum);
+      setLoadingSpectrum(false);
+      setSpectrumError(false);
+    } else {
+      console.log("GOOD");
+      setLoadingSpectrum(false);
+      setSpectrumError(true);
+    }
   };
 
   return (
