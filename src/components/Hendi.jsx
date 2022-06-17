@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Style/Hendi.css";
+import "../style/Hendi.css";
 import Tooltip from "./Tooltip";
 
 function Hendi({ id, seeOutside }) {

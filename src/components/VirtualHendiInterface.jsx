@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Hendi from "./Hendi";
-import "../Style/VirtualHendiInterface.css";
+import "../style/VirtualHendiInterface.css";
 import TemperatureController from "./TemperatureController";
 import WavelengthController from "./WavelengthController";
 import Spinner from "./Spinner";

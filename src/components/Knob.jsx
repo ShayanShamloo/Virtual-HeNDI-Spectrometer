@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Style/Knob.css";
+import "../style/Knob.css";
 
 function Knob(props) {
   handleDrag = handleDrag.bind();

@@ -1,5 +1,5 @@
 import React from "react";
-import "../Style/AdjustableDigitalReadout.css";
+import "../style/AdjustableDigitalReadout.css";
 
 function AdjustableDigitalReadout({
   val,

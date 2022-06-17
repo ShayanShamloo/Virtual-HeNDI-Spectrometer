@@ -1,5 +1,5 @@
 import React from "react";
-import VirtualHendiInterface from "./Components/VirtualHendiInterface";
+import VirtualHendiInterface from "./components/VirtualHendiInterface";
 
 function App() {
   return <VirtualHendiInterface />;

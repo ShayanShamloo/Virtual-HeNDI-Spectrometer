@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Dygraph from "dygraphs";
-import "../Style/VirtualHendiInterface.css";
+import "../style/VirtualHendiInterface.css";
 import { saveAs } from "file-saver";
 
 function Spectrum({ data }) {

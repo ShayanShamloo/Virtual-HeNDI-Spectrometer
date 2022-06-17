@@ -1,5 +1,5 @@
 import React from "react";
-import "../Style/DigitalReadout.css";
+import "../style/DigitalReadout.css";
 
 function DigitalReadout(props) {
   const val = String(Number(props.number).toFixed(2)).padStart(

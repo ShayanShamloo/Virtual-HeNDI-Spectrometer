@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "../Style/Tooltip.css";
+import React from "react";
+import "../style/Tooltip.css";
 
 function Tooltip({ header, text, visible, left, top }) {
   if (visible) {

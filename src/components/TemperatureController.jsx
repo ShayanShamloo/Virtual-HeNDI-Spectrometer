@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import "../Style/TemperatureController.css";
-import "../Style/VirtualHendiInterface.css";
+import React from "react";
+import "../style/TemperatureController.css";
+import "../style/VirtualHendiInterface.css";
 import AdjustableDigitalReadout from "./AdjustableDigitalReadout";
 
 function TemperatureController({ id, temperature, setTemperature }) {

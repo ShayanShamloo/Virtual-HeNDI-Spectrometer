@@ -1,5 +1,5 @@
 import React from "react";
-import "../Style/VirtualHendiInterface.css";
+import "../style/VirtualHendiInterface.css";
 
 export function Error(props) {
   return (

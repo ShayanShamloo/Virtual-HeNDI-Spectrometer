@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import "../Style/WavelengthController.css";
-import "../Style/VirtualHendiInterface.css";
+import React from "react";
+import "../style/WavelengthController.css";
+import "../style/VirtualHendiInterface.css";
 import AdjustableDigitalReadout from "./AdjustableDigitalReadout";
 
 function WavelengthController({
