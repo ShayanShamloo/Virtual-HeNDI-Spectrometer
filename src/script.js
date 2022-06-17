@@ -1,5 +1,5 @@
 import Big from "big.js";
-
+// find the largest Big()
 Big.max = function () {
   var i,
     y,
@@ -11,6 +11,7 @@ Big.max = function () {
   return x;
 };
 
+// find the smallest Big()
 Big.min = function () {
   var i,
     y,
@@ -75,14 +76,14 @@ export async function calculateSpectrum(temperature, min_lambda, max_lambda) {
 
     const dataObject = await fetchDataFile(values.url, temp1, temp2);
 
-    console.log("starting new file");
+    console.log(new Date());
     const interpolatedSpectrum = interpolateValue(
       dataObject,
       values,
       temp1,
       temp2
     );
-    console.log("ending new file");
+    console.log(new Date());
     return interpolatedSpectrum;
   }
 }
@@ -157,10 +158,10 @@ function fileBounds(temp) {
   }
 }
 
-export function interpolateValue(dataObject, values, temp1, temp2) {
+export function interpolateValue(dataObject, values, fileXTemp, fileYTemp) {
   // determine the start and end of fileX and fileY
-  let fileXBounds = fileBounds(temp1);
-  let fileYBounds = fileBounds(temp2);
+  let fileXBounds = fileBounds(fileXTemp);
+  let fileYBounds = fileBounds(fileYTemp);
 
   let d1 = new Map(
     dataObject.data1.split("\n").map((elem) => elem.trim().split("\t"))
@@ -189,8 +190,8 @@ export function interpolateValue(dataObject, values, temp1, temp2) {
     // console.log("    start at min");
   }
 
-  const bigTemp1 = new Big(temp1);
-  const bigTemp2 = new Big(temp2);
+  const bigTemp1 = new Big(fileXTemp);
+  const bigTemp2 = new Big(fileYTemp);
   const bigTemperature = new Big(values.temperature);
 
   // calculate values for interpolation
@@ -201,6 +202,8 @@ export function interpolateValue(dataObject, values, temp1, temp2) {
   let finalSpectrum = "";
   let d1Value, d2Value;
   for (let i = fileStart; i < fileEnd; i = i.add(0.0001)) {
+    // console.log(i + " " + d1.get(i.toString()) + " " + d2.get(i.toString()));
+
     d1Value = new Big(d1.get(i.toString()));
     d2Value = new Big(d2.get(i.toString()));
 
