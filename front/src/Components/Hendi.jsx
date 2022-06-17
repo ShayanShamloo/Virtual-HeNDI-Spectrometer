@@ -293,15 +293,14 @@ function Hendi({ id, seeOutside }) {
       )} */}      
       <SVGComponent className='click-through' part='laserexterior' style={{stroke:'#fff0'}} /> 
       <SVGComponent className='click-through' part='base' />
-      <SVGComponent className='click-through' part='sourcechamber' />
-      <SVGComponent className='click-through' part='dopingchamber' />
-      <SVGComponent className='click-through' part='detectionchamber' />
       <SVGComponent className='click-through' part='lasersymbol' />
       <SVGComponent className='click-through' part='rpump' />
       <SVGComponent className='click-through' part='ddpump' />
       <SVGComponent className='click-through' part='sdpump' />
       <SVGComponent className='click-through' part='tpump' />
-      {/* laser's stroke is currently set to transparent */}
+      <SVGComponent className='click-through' part='sourcechamber' />
+      <SVGComponent className='click-through' part='dopingchamber' />
+      <SVGComponent className='click-through' part='detectionchamber' />
 
     </div>
   );

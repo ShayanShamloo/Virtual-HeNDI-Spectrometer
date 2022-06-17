@@ -33,5 +33,6 @@ export default function SVGComponent({part, style, click, startColor}) { // Styl
     const Component = svgParts[part];
 
     return <Component className='svg' viewBox='-70 110 650 450' style={{...style, stroke: toggled ? 'blue' : style?.stroke ?? 'black', strokeWidth: toggled ? '5' : style?.strokeWidth ?? '1'}} onClick={click ?? handleClick} />
-    // In the SVG files, you must remove the stroke and stroke-height of the element you want outlined and you must remove the  height an width from the very first line to get the SVG to use the veiewbox and scale properly
+    // SVG File Prep: put them through SVGOMG to strip any inkscape specific tags that would break React
+    // In the SVG files, you must remove the stroke and stroke-height of the element you want outlined and you must remove the  height and width from the very first line to get the SVG to use the viewbox and scale properly
 }
