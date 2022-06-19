@@ -8,7 +8,7 @@ import Spectrum from "./Spectrum";
 import Instructions from "./Instructions";
 import { Error } from "./Error";
 
-import { calculateSpectrum } from "../dataInterpolation";
+import { calculateSpectrum } from "../scripts/dataInterpolation";
 
 function VirtualHendiInterface() {
   const hendiRef = React.createRef();
