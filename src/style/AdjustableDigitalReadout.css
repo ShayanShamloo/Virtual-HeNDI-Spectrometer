@@ -6,10 +6,6 @@
   display: flex;
   flex-direction: column;
 }
-@font-face {
-  font-family: "digital";
-  src: url("/virtual-hendi/fonts/digital-7 (mono).ttf");
-}
 .button-container > button {
   flex-grow: 1;
   font-family: "digital", monospace;
