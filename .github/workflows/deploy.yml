@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main
+      - local-interpolation
 permissions: 
   contents: write
 jobs:
