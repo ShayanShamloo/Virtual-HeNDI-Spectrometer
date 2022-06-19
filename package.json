@@ -1,10 +1,9 @@
 {
   "name": "virtual-hendi-spectrometer",
-  "homepage": "https://vanfossen.github.io/Virtual-HeNDI-Spectrometer",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vanfossen.github.io/Virtual-HeNDI-Spectrometer",
   "dependencies": {
-    "axios": "^0.21.1",
     "big.js": "^6.2.0",
     "dygraphs": "^2.1.0",
     "file-saver": "^2.0.5",
@@ -16,8 +15,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "watch": "nodemon index.jsx"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,9 +30,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^4.0.0",
-    "react-scripts": "3.4.1"
   }
 }
