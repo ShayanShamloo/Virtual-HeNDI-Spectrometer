@@ -1,5 +1,6 @@
 {
-  "name": "front",
+  "name": "virtual-hendi-spectrometer",
+  "homepage": "https://vanfossen.github.io/Virtual-HeNDI-Spectrometer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,7 +35,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "react-scripts": "3.4.1"
-  },
-  "homepage": "https://virtual-hendi.isaac-j-miller.com"
+  }
 }
