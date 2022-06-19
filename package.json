@@ -7,10 +7,14 @@
     "big.js": "^6.2.0",
     "dygraphs": "^2.1.0",
     "file-saver": "^2.0.5",
+    "gh-pages": "^4.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
+
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
