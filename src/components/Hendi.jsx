@@ -123,43 +123,43 @@ function Hendi({ id, seeOutside }) {
         alt="background"
         className={`hendi-component ${bg ? "" : "transparent"}`}
         id="hendi-bg"
-        src="/images/hendi-background.png"
+        src="images/hendi-background.png"
       />
       <img
         alt="foreground"
         className={`hendi-component ${seeOutside ? "" : "transparent"}`}
         id="hendi-fg"
-        src="/images/hendi-foreground.png"
+        src="images/hendi-foreground.png"
       />
       <img
         alt="coldhead"
         className={`hendi-component ${!seeOutside ? "" : "transparent"}`}
         id="hendi-ch"
-        src="/images/hendi-coldhead.png"
+        src="images/hendi-coldhead.png"
       />
       <img
         alt="stark cell"
         className={`hendi-component ${!seeOutside ? "" : "transparent"}`}
         id="hendi-stark"
-        src="/images/hendi-stark.png"
+        src="images/hendi-stark.png"
       />
       <img
         alt="quadrupole"
         className={`hendi-component ${!seeOutside ? "" : "transparent"}`}
         id="hendi-quad"
-        src="/images/hendi-quad.png"
+        src="images/hendi-quad.png"
       />
       <img
         alt="laserbeam"
         className={`hendi-component ${!seeOutside ? "" : "transparent"}`}
         id="hendi-laserbeam"
-        src="/images/hendi-laserbeam.png"
+        src="images/hendi-laserbeam.png"
       />
       <img
         alt="OCS canister"
         className={`hendi-component ${seeOutside ? "" : "transparent"}`}
         id="hendi-ocs-canister"
-        src="/images/hendi-ocs-canister.png"
+        src="images/hendi-ocs-canister.png"
         useMap="hendi-map"
       />
       <Tooltip
