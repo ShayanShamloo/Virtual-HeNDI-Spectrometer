@@ -12,7 +12,7 @@ import Big from "big.js";
   max_lambda = 2090
 ) {
   const url =
-    "https://raw.githubusercontent.com/RastonLab/Virtual-HeNDI-Spectrometer/main/interpolator/spectra/OCS_";
+    "https://raw.githubusercontent.com/RastonLab/Virtual-HeNDI-Spectrometer/main/spectra/OCS_";
 
   // use existing .dat file if the requested temperature matches
   if (
