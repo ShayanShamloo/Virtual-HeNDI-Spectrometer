@@ -4,7 +4,7 @@ import "../style/VirtualHendiInterface.css";
 const Spinner = (props) => {
   return (
     <div className="spinner-container">
-      <img src="/logo512.png" className="spinner" alt="spinner" />
+      <img src="Virtual-HeNDI-Spectrometer/images/spinner.png" className="spinner" alt="spinner" />
       <label>Loading...</label>
     </div>
   );
