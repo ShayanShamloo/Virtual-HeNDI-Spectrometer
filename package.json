@@ -1,8 +1,8 @@
 {
-  "name": "virtual-hendi-test",
+  "name": "Virtual-HeNDI-Spectrometer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vanfossen.github.io/virtual-hendi-test",
+  "homepage": "http://rastonlab.github.io/Virtual-HeNDI-Spectrometer/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
