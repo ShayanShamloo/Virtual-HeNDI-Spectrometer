@@ -9,50 +9,6 @@ import {ReactComponent as SourceChamberSVG} from './svgs/hendi-source-chamber.sv
 import {ReactComponent as DopingChamberSVG} from './svgs/hendi-doping-chamber.svg';
 import {ReactComponent as DetectionChamberSVG} from './svgs/hendi-detection-chamber.svg';
 
-// export const svgParts = {
-//     'laserexterior': {
-//         'svg': LaserbeamExteriorSVG,
-//         'style': {top:'0', stroke:'#fff0'}
-//     },
-//     'base': {
-//         'svg': BaseSVG,
-//         'style': {top:'0'}
-//     },
-//     'lasersymbol': {
-//         'svg': LaserSymbolSVG,
-//         'style': {top:'0'}
-//     },
-//     'ddpump': {
-//         'svg': DopingDiffusionSVG,
-//         'style': {top:'0'},
-//     },
-//     'sdpump': {
-//         'svg': SourceDiffusionSVG,
-//         'style': {top:'0'}
-//     },
-//     'tpump': {
-//         'svg': TurboSVG,
-//         'style': {top:'0'}
-//     },
-//     'rpump': {
-//         'svg': RotarySVG,
-//         'style': {top:'0'}
-//     },
-//     'sourcechamber': {
-//         'svg': SourceChamberSVG,
-//         'style': {top:'0'}
-//     },
-//     'dopingchamber': {
-//         'svg': DopingChamberSVG,
-//         'style': {top:'0'}
-//     },
-//     'detectionchamber': {
-//         'svg': DetectionChamberSVG,
-//         'style': {top:'0'}
-//     },
-
-// }
-
 export const svgParts = {
     'laserexterior': LaserbeamExteriorSVG,
     'base': BaseSVG,

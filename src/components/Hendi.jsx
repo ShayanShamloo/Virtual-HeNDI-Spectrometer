@@ -9,10 +9,6 @@ function Hendi({ id, seeOutside }) {
   return (
     <div className="hendi-box" id={id}> 
 
-      {/* {svgParts.map((part, index) => {
-        return <SVGComponent part={part} key={index} className='click-through' />;
-      })} */}
-
       <SVGComponent style={{top:'0', stroke:'#fff0'}} className='click-through' part='laserexterior' /> 
       <SVGComponent style={{top:'0'}} className='click-through' part='base' />
       <SVGComponent style={{top:'0'}} className='click-through' part='lasersymbol' />
