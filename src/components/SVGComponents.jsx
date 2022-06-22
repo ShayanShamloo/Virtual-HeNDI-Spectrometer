@@ -12,7 +12,7 @@ export default function SVGComponent({part, style, click}) { // Style is the int
     const Component = svgParts[part];
 
     return (<div>
-                <Component className='svg' viewBox='-70 110 650 450' style={{...part.style, stroke: toggled ? 'blue' : style?.stroke ?? 'black', strokeWidth: toggled ? '5' : style?.strokeWidth ?? '1'}} onClick={click ?? handleClick} />
+                <Component className='svg' viewBox='-70 110 650 450' style={{...style, stroke: toggled ? 'blue' : style?.stroke ?? 'black', strokeWidth: toggled ? '5' : style?.strokeWidth ?? '1'}} onClick={click ?? handleClick} />
                 <Tooltip 
                     header={toolTips[part].header}
                     text={toolTips[part].text}
