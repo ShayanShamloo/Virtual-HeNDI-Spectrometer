@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <g style="display:inline">
+    <path style="display:inline;fill:#999;stroke:#000;stroke-width:.999808;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" d="M160.5 260.5h24v39h-24z"/>
+    <rect style="display:inline;fill:#999;stroke:#000;stroke-width:.999801;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" width="59" height="84" x="360.5" y="110.5" ry="0"/>
+    <rect style="display:inline;fill:#999;stroke:#000;stroke-width:1.00002;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" width="39" height="119" x="90.5" y="110.5" ry="0"/>
+    <rect style="display:inline;fill:#999;stroke:#000;stroke-width:1.00004;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" width="69" height="29" x="205.5" y="195.5" ry="0"/>
+    <rect style="display:inline;fill:#999;stroke:#000;stroke-width:.999905;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" width="79" height="4" x="200.5" y="190.5" ry="0"/>
+    <rect style="display:inline;fill:#999;stroke:#000;stroke-width:.999904;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" width="14" height="11" x="233" y="178.5" ry="0"/>
+    <rect style="display:inline;fill:#999;stroke:#000;stroke-width:.999963;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" width="69" height="29" x="205.5" y="335.5" ry="0"/>
+    <rect style="display:inline;fill:#999;stroke:#000;stroke-width:.999983;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" width="39" height="34.001" x="90.5" y="330.5" ry="0"/>
+    <path style="display:inline;fill:#999;stroke:#000;stroke-width:.999808;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" d="M35.5 260.5h24v39h-24zm260 0h24v39h-24z"/>
+  </g>
+</svg>

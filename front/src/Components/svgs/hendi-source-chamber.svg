@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg">
-  <g style="display:inline">
-    <path style="display:inline;fill:#999;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" d="M320.5 195.5h139v169h-139z"/>
-    <path style="display:inline;fill:gray;fill-opacity:1;stroke:#000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" d="m3 5-5.83.098-3-5L-3-5l5.83-.098 3 5z" transform="translate(330 205) scale(.78035)"/>
-    <path style="display:inline;fill:gray;fill-opacity:1;stroke:#000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" d="m3 5-5.83.098-3-5L-3-5l5.83-.098 3 5z" transform="translate(450 205) scale(.78035)"/>
-    <path style="display:inline;fill:gray;fill-opacity:1;stroke:#000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" d="m3 5-5.83.098-3-5L-3-5l5.83-.098 3 5z" transform="translate(450 355) scale(.78035)"/>
-    <path style="display:inline;fill:gray;fill-opacity:1;stroke:#000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" d="m3 5-5.83.098-3-5L-3-5l5.83-.098 3 5z" transform="translate(335.352 354.513) scale(.78035)"/>
-  </g>
-</svg>
