@@ -7,8 +7,6 @@ function TemperatureController({ id, temperature, setTemperature }) {
   const MIN = 13.5;
   const MAX = 20;
 
-  const butValid = (val) => Math.min(Math.max(val, MIN), MAX);
-
   // never used
   // const [temperature, setTemperature] = useState(13.5);
 
@@ -17,7 +15,27 @@ function TemperatureController({ id, temperature, setTemperature }) {
     <div className="temp-controller" id={id}>
       <div className="instrument-label-readout" id="temp-controller-temp">
         <label className="instrument-label">Nozzle Temperature</label>
-        <AdjustableDigitalReadout
+        <input
+          name="temperature"
+          className="digital-readout"
+          type='number'
+          step='0.5'
+          min={MIN}
+          max={MAX}
+          onChange={({ target: { value } }) =>
+            setTemperature(Number(value))
+          }
+          value={temperature}
+          style={{ width: `${3}em` }}
+        />
+        <label className="digital-readout">K</label> 
+      </div>
+    </div>
+  );
+}
+export default TemperatureController;
+
+        {/* <AdjustableDigitalReadout
           name="temperature"
           val={temperature}
           unit={<p>K</p>}
@@ -27,9 +45,4 @@ function TemperatureController({ id, temperature, setTemperature }) {
           handleChange={({ target: { value } }) =>
             setTemperature(butValid(value))
           }
-        ></AdjustableDigitalReadout>
-      </div>
-    </div>
-  );
-}
-export default TemperatureController;
+        ></AdjustableDigitalReadout> */}

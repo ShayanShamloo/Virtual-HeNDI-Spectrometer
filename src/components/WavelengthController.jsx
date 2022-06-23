@@ -42,7 +42,42 @@ function WavelengthController({
     <div className="temp-controller" id={id}>
       <div className="instrument-label-readout" id="temp-controller-temp">
         <label className="instrument-label">Min Wavenumber</label>
-        <AdjustableDigitalReadout
+        <input
+          name='min_lambda'
+          className="digital-readout"
+          type='number'
+          step='0.5'
+          min={MIN_WAV}
+          max={MAX_WAV}
+          onChange={({ target: { value }}) =>
+            setMinLambda(Number(value))
+          }
+          value={min_lambda}
+          style={{ width: `${4}em` }}
+        />
+        <label className="digital-readout">cm<sup>-1</sup></label> 
+        <label className="instrument-label">Max Wavenumber</label>
+        <input
+          name='max_lambda'
+          className="digital-readout"
+          type='number'
+          step='0.5'
+          min={MIN_WAV}
+          max={MAX_WAV}
+          onChange={({ target: { value }}) =>
+            setMaxLambda(Number(value))
+          }          
+          value={max_lambda}
+          style={{ width: `${4}em` }}
+          />
+          <label className="digital-readout">cm<sup>-1</sup></label> 
+      </div>
+    </div>
+  );
+}
+export default WavelengthController;
+
+        {/* <AdjustableDigitalReadout
           name="min_lambda"
           increment={incrementProp(min_lambda, setMinLambda)}
           decrement={decrementProp(min_lambda, setMinLambda)}
@@ -50,9 +85,9 @@ function WavelengthController({
           digits={7}
           onChange={handleChange}
           val={min_lambda}
-        ></AdjustableDigitalReadout>
-        <label className="instrument-label">Max Wavenumber</label>
-        <AdjustableDigitalReadout
+        ></AdjustableDigitalReadout> */}
+
+        {/* <AdjustableDigitalReadout
           name="max_lambda"
           increment={incrementProp(max_lambda, setMaxLambda)}
           decrement={decrementProp(max_lambda, setMaxLambda)}
@@ -60,9 +95,4 @@ function WavelengthController({
           digits={7}
           onChange={handleChange}
           val={max_lambda}
-        ></AdjustableDigitalReadout>
-      </div>
-    </div>
-  );
-}
-export default WavelengthController;
+        ></AdjustableDigitalReadout> */}
