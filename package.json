@@ -2,11 +2,7 @@
   "name": "virtual-hendi-spectrometer",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
   "homepage": "https://brennaser.github.io/Virtual-HeNDI-Spectrometer/",
-=======
-  "homepage": "https://rastonlab.github.io/Virtual-HeNDI-Spectrometer/",
->>>>>>> RastonLab-main
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -19,11 +15,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-<<<<<<< HEAD
     "start": "react-scripts --openssl-legacy-provider start",
-=======
-    "start": "react-scripts start",
->>>>>>> RastonLab-main
     "build": "react-scripts build",
     "local": "PUBLIC_URL=/ react-scripts start",
     "test": "react-scripts test",
