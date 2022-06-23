@@ -49,13 +49,12 @@ function VirtualHendiInterface() {
       min_lambda,
       max_lambda
     );
+
     if (spectrum) {
-      console.log("BAD");
       setSpectrum(spectrum);
       setLoadingSpectrum(false);
       setSpectrumError(false);
     } else {
-      console.log("GOOD");
       setLoadingSpectrum(false);
       setSpectrumError(true);
     }
