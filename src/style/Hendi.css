@@ -7,12 +7,22 @@
 }
 .hendi-box {
   width: 128vh;
-  height: 80vh;
+  height: 82vh;
   position: absolute;
   border: solid black 1px;
   border-radius: 1em;
   margin: 1em;
 }
+
+.svg {
+  position: absolute;
+  pointer-events: none;
+}
+
+path {
+  pointer-events: all;
+}
+
 @media only screen and (max-width: 768px) {
   .hendi-box {
     width: 95vw;
@@ -26,9 +36,9 @@
   /* border: dotted red 1px; */
   border-radius: 4px;
 }
-.area-div:hover {
+/* .area-div:hover {
   background-color: rgba(99, 245, 66, 0.25);
-}
+} */
 #hendi-ch-clickable {
   top: 0%;
   left: 79%;
