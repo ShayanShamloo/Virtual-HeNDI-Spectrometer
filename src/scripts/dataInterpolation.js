@@ -22,7 +22,24 @@ import Big from "big.js";
     temperature === 20
   ) {
     const dataObject = await fetchDataFile(url, temperature);
-    return dataObject.fileXData;
+
+    let d1 = new Map(
+      dataObject.fileXData.split("\n").map((elem) => elem.trim().split("\t"))
+    );
+
+    const start = new Big(min_lambda);
+    const end = new Big(max_lambda);
+    let finalSpectrum = "";
+    for (let i = start; i <= end; i = i.add(0.0001)) {
+      // if an x (i) value is missing, skip
+      if (!d1.has(i.toString())) {
+        continue;
+      }
+
+      finalSpectrum += i + "\t" + (new Big(d1.get(i.toString()))) + "\r\n";
+
+    }
+    return finalSpectrum;
 
     // interpolate .dat file if the requested temperature does not match
   } else {
@@ -44,6 +61,7 @@ import Big from "big.js";
     const interpolatedSpectrum = interpolateValue(
       dataObject,
       min_lambda,
+      max_lambda,
       temperature,
       fileXTemp,
       fileYTemp
@@ -142,6 +160,7 @@ export function fileBounds(temperature) {
  * Performs the interpolation math between two provided data files
  * @param {object} dataObject An object that contains the data from the fetched files
  * @param {number} min_lambda The requested minimum wavenumber
+ * @param {number} max_lambda The requested maximim wavenumber
  * @param {number} temperature The requested nozzle temperature
  * @param {number} fileXTemp The temperature associated with file X
  * @param {number} fileYTemp The temperature associated with file X
@@ -150,6 +169,7 @@ export function fileBounds(temperature) {
 export function interpolateValue(
   dataObject,
   min_lambda,
+  max_lambda,
   temperature,
   fileXTemp,
   fileYTemp
@@ -167,18 +187,23 @@ export function interpolateValue(
   );
 
   // the fileStart will be the largest of the two
-  const fileStart = Big.max(fileXBounds.start, fileYBounds.start);
+  let fileStart = Big.max(fileXBounds.start, fileYBounds.start);
 
   // the fileEnd will be the smallest of the two
-  const fileEnd = Big.min(fileXBounds.end, fileYBounds.end);
+  let fileEnd = Big.min(fileXBounds.end, fileYBounds.end);
 
   // if the requested min is less than fileStart, make the requested min the same as fileStart
   if (
-    new Big(min_lambda) < fileXBounds.start &&
-    new Big(min_lambda) < fileYBounds.start
+    new Big(min_lambda) > fileStart
   ) {
     //  if min is smaller than d1/d2, make min d1/d2
-    min_lambda = fileStart;
+    fileStart = new Big(min_lambda);
+  }
+
+  if (
+    new Big(max_lambda) < fileEnd
+  ) {
+    fileEnd = new Big(max_lambda);
   }
 
   const bigTemp1 = new Big(fileXTemp);
