@@ -16,3 +16,20 @@
 .button-container > button:hover {
   background-color: darkgrey;
 }
+
+@font-face {
+  font-family: 'digital';
+  src: url(./fonts/digital-7\ \(mono\).ttf);
+}
+
+.digital-readout {
+  background-color: black;
+  color: #39ff14;
+  padding: 10px;
+  font-size: 20px;
+}
+
+input {
+  font-family: 'digital';
+  font-size: 30px !important;
+}

@@ -20,7 +20,7 @@ function TemperatureController({ id, temperature, setTemperature }) {
         <AdjustableDigitalReadout
           name="temperature"
           val={temperature}
-          unit="K"
+          unit={<p>K</p>}
           digits={5}
           increment={() => setTemperature(butValid(temperature + 0.5))}
           decrement={() => setTemperature(butValid(temperature - 0.5))}

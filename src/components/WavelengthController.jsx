@@ -36,6 +36,8 @@ function WavelengthController({
     setter(butValid(val - 0.5));
   };
 
+  const superScriptUnit = <p>cm<sup>-1</sup></p>;
+
   return (
     <div className="temp-controller" id={id}>
       <div className="instrument-label-readout" id="temp-controller-temp">
@@ -44,7 +46,7 @@ function WavelengthController({
           name="min_lambda"
           increment={incrementProp(min_lambda, setMinLambda)}
           decrement={decrementProp(min_lambda, setMinLambda)}
-          unit="cm-1"
+          unit={superScriptUnit}
           digits={7}
           onChange={handleChange}
           val={min_lambda}
@@ -54,7 +56,7 @@ function WavelengthController({
           name="max_lambda"
           increment={incrementProp(max_lambda, setMaxLambda)}
           decrement={decrementProp(max_lambda, setMaxLambda)}
-          unit="cm-1"
+          unit={superScriptUnit}
           digits={7}
           onChange={handleChange}
           val={max_lambda}
