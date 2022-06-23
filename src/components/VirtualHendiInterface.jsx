@@ -51,12 +51,10 @@ function VirtualHendiInterface() {
     );
 
     if (spectrum) {
-      console.log("GOOD");
       setSpectrum(spectrum);
       setLoadingSpectrum(false);
       setSpectrumError(false);
     } else {
-      console.log("BAD");
       setLoadingSpectrum(false);
       setSpectrumError(true);
     }

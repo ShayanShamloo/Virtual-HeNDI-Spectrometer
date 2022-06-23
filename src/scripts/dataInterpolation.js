@@ -6,7 +6,7 @@ import Big from "big.js";
  * @param {number} max_lambda The requested maximum wavenumber
  * @returns A retrieved or interpolated data that Dygraph can present to the user
  */
- export async function calculateSpectrum(
+export async function calculateSpectrum(
   temperature = 13.5,
   min_lambda = 2030,
   max_lambda = 2090
@@ -23,23 +23,26 @@ import Big from "big.js";
   ) {
     const dataObject = await fetchDataFile(url, temperature);
 
-    let d1 = new Map(
-      dataObject.fileXData.split("\n").map((elem) => elem.trim().split("\t"))
-    );
+    if (dataObject[0]) {
+      let d1 = new Map(
+        dataObject[0].split("\n").map((elem) => elem.trim().split("\t"))
+      );
 
-    const start = new Big(min_lambda);
-    const end = new Big(max_lambda);
-    let finalSpectrum = "";
-    for (let i = start; i <= end; i = i.add(0.0001)) {
-      // if an x (i) value is missing, skip
-      if (!d1.has(i.toString())) {
-        continue;
+      const start = new Big(min_lambda);
+      const end = new Big(max_lambda);
+      let finalSpectrum = "";
+      for (let i = start; i <= end; i = i.add(0.0001)) {
+        // if an x (i) value is missing, skip
+        if (!d1.has(i.toString())) {
+          continue;
+        }
+
+        finalSpectrum += i + "\t" + new Big(d1.get(i.toString())) + "\r\n";
       }
-
-      finalSpectrum += i + "\t" + (new Big(d1.get(i.toString()))) + "\r\n";
-
+      return finalSpectrum;
+    } else {
+      return null;
     }
-    return finalSpectrum;
 
     // interpolate .dat file if the requested temperature does not match
   } else {
@@ -58,15 +61,19 @@ import Big from "big.js";
 
     const dataObject = await fetchDataFile(url, fileXTemp, fileYTemp);
 
-    const interpolatedSpectrum = interpolateValue(
-      dataObject,
-      min_lambda,
-      max_lambda,
-      temperature,
-      fileXTemp,
-      fileYTemp
-    );
-    return interpolatedSpectrum;
+    // if data exists, perform interpolation, else return null
+    if (dataObject[0] && dataObject[1]) {
+      return interpolateValue(
+        dataObject,
+        min_lambda,
+        max_lambda,
+        temperature,
+        fileXTemp,
+        fileYTemp
+      );
+    } else {
+      return null;
+    }
   }
 }
 
@@ -81,38 +88,36 @@ import Big from "big.js";
  */
 async function fetchDataFile(baseURL, fileXTemp, fileYTemp) {
   const fileXUrl = baseURL.concat(fileXTemp, "K.dat");
-  const fileXResponse = await fetch(fileXUrl);
 
-  if (fileXResponse.status === 200) {
-    console.log("  response is good! Response: " + fileXResponse.status);
-  } else {
-    console.log("  response is bad! Response: " + fileXResponse.status);
-    return null;
+  let fileXResponse, fileXData, fileYData;
+  try {
+    fileXResponse = await fetch(fileXUrl);
+  } catch (error) {
+    console.log("Caught error: " + error);
+    let dataObject = {
+      fileXData: null,
+    };
+    return dataObject;
   }
-
-  const fileXData = await fileXResponse.text();
-  let dataObject = {
-    fileXData,
-  };
+  fileXData = await fileXResponse.text();
 
   if (fileYTemp) {
     // construct and fetch the second .dat file (if needed)
     const fileYUrl = baseURL.concat(fileYTemp, "K.dat");
-    const fileYResponse = await fetch(fileYUrl);
 
-    if (fileYResponse.status === 200) {
-      console.log("  response is good! Response: " + fileYResponse.status);
-    } else {
-      console.log("  response is bad! Response: " + fileYResponse.status);
-      return null;
+    let fileYResponse;
+    try {
+      fileYResponse = await fetch(fileYUrl);
+    } catch (error) {
+      console.log("error retrieving data");
+      let dataObject = {
+        fileXData: null,
+      };
+      return dataObject;
     }
-    const fileYData = await fileYResponse.text();
-    dataObject = {
-      ...dataObject,
-      fileYData,
-    };
+    fileYData = await fileYResponse.text();
   }
-  return dataObject;
+  return [fileXData, fileYData];
 }
 
 /**
@@ -179,11 +184,11 @@ export function interpolateValue(
   let fileYBounds = fileBounds(fileYTemp);
 
   let d1 = new Map(
-    dataObject.fileXData.split("\n").map((elem) => elem.trim().split("\t"))
+    dataObject[0].split("\n").map((elem) => elem.trim().split("\t"))
   );
 
   let d2 = new Map(
-    dataObject.fileYData.split("\n").map((elem) => elem.trim().split("\t"))
+    dataObject[1].split("\n").map((elem) => elem.trim().split("\t"))
   );
 
   // the fileStart will be the largest of the two
@@ -193,16 +198,12 @@ export function interpolateValue(
   let fileEnd = Big.min(fileXBounds.end, fileYBounds.end);
 
   // if the requested min is less than fileStart, make the requested min the same as fileStart
-  if (
-    new Big(min_lambda) > fileStart
-  ) {
+  if (new Big(min_lambda) > fileStart) {
     //  if min is smaller than d1/d2, make min d1/d2
     fileStart = new Big(min_lambda);
   }
 
-  if (
-    new Big(max_lambda) < fileEnd
-  ) {
+  if (new Big(max_lambda) < fileEnd) {
     fileEnd = new Big(max_lambda);
   }
 
