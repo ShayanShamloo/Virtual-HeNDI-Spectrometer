@@ -29,11 +29,13 @@
   max-width: 95vw;
 }
 .instrument-label-readout {
-  background-color: lightgray;
-  border: double black 1px;
+  background-color: black;
+  /* background-color: lightgray; */
+  /* border: double black 1px; */
   padding: 0.5em;
   margin: 0.5em;
   font-family: "digital", monospace;
+  color: #39ff14;
 }
 .instrument-label {
   font-weight: bold;

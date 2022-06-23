@@ -12,7 +12,9 @@ function AdjustableDigitalReadout({
   increment,
   decrement,
 }) {
+
   let adjustedVal = String(Number(val).toFixed(2)).padStart(digits || 6, "0");
+  
   return (
     <div id={id} className={className + " digital-readout-adjustable"}>
       <input
