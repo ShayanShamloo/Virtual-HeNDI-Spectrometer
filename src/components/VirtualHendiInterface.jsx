@@ -70,7 +70,7 @@ function VirtualHendiInterface() {
           max_lambda={max_lambda}
           setMaxLambda={setMaxLambda}
         />
-        <button onClick={getSpectrum}>Run Spectrum</button>
+        <button onClick={getSpectrum}>Collect Spectrum</button>
         {loadingSpectrum ? (
           <Spinner />
         ) : spectrumError ? (
