@@ -4,9 +4,14 @@ import SVGComponent from "./SVGComponents";
 
 function Hendi({ id, seeOutside }) {
 
-  if (seeOutside) {
     return (
-      <div className="hendi-box" id={id}> 
+      <>
+      <div className={`hendi-box ${!seeOutside ? '' : 'transparent'}`}>
+      <SVGComponent style={{top:'0'}} className='click-through' part='base' />
+      <SVGComponent style={{top:'0'}} className='click-through' part='sourcechamber' />
+
+      </div>
+      <div className={`hendi-box ${seeOutside ? '' : 'transparent'}`} id={id}> 
         <SVGComponent style={{top:'0', stroke:'#fff0'}} className='click-through' part='laserexterior' /> 
         <SVGComponent style={{top:'0'}} className='click-through' part='base' />
         <SVGComponent style={{top:'0'}} className='click-through' part='lasersymbol' />
@@ -18,14 +23,8 @@ function Hendi({ id, seeOutside }) {
         <SVGComponent style={{top:'0'}} className='click-through' part='dopingchamber' />
         <SVGComponent style={{top:'0'}} className='click-through' part='detectionchamber'/>
       </div>
+      </>
     );
-  } else {
-    return (
-      <div className="hendi-box" id={id}>
-      <img src='./Virtual-HeNDI-Spectrometer/images/spinner.png' />
-      </div>
-    );
-  }
 }
 
 export default Hendi;
