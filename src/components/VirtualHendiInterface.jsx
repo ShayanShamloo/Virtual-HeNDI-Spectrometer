@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Hendi from "./Hendi";
 import "../style/VirtualHendiInterface.css";
 import TemperatureController from "./TemperatureController";
@@ -11,13 +11,9 @@ import { Error } from "./Error";
 import { calculateSpectrum } from "../scripts/dataInterpolation";
 
 function VirtualHendiInterface() {
-  const hendiRef = React.createRef();
-  const tempRef = React.createRef();
   const [temperature, setTemperature] = useState(13.5);
-  const lambdaRef = React.createRef();
   const [min_lambda, setMinLambda] = useState(2030);
   const [max_lambda, setMaxLambda] = useState(2090);
-  let _isMounted = false;
 
   const [fgState, setFgState] = useState(true);
   const [toggleFgTitle, setToggleFgTitle] = useState(
@@ -26,10 +22,6 @@ function VirtualHendiInterface() {
   const [spectrum, setSpectrum] = useState("");
   const [loadingSpectrum, setLoadingSpectrum] = useState(false);
   const [spectrumError, setSpectrumError] = useState(false);
-
-  useEffect(() => {
-    _isMounted = true;
-  }, []);
 
   const hideForeground = () => {
     if (fgState) {
@@ -62,25 +54,23 @@ function VirtualHendiInterface() {
 
   return (
     <div id="main-virtual-hendi-interface-container">
-      <Hendi id="hendi-instrument" ref={hendiRef} seeOutside={fgState} />
+      <Hendi id="hendi-instrument" seeOutside={fgState} />
       <div id="control-box">
         <button onClick={hideForeground}>{toggleFgTitle}</button>
         <TemperatureController
           id="temperature-controller"
-          ref={tempRef}
           temperature={temperature}
           setTemperature={setTemperature}
         />
         <WavelengthController
           id="wavelength-controller"
           parent={this}
-          ref={lambdaRef}
           min_lambda={min_lambda}
           setMinLambda={setMinLambda}
           max_lambda={max_lambda}
           setMaxLambda={setMaxLambda}
         />
-        <button onClick={getSpectrum}>Run Spectrum</button>
+        <button onClick={getSpectrum}>Collect Spectrum</button>
         {loadingSpectrum ? (
           <Spinner />
         ) : spectrumError ? (

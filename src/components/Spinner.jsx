@@ -5,7 +5,7 @@ const Spinner = (props) => {
   return (
     <div className="spinner-container">
       <img src="images/spinner.png" className="spinner" alt="spinner" />
-      <label>Loading...</label>
+      <label>Preparing instrument...</label>
     </div>
   );
 };
