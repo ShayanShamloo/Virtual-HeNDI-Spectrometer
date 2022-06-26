@@ -57,6 +57,8 @@ export async function calculateSpectrum(
     } else if (temperature > 18 && temperature < 20) {
       fileXTemp = 18;
       fileYTemp = 20;
+    } else {
+      return null;
     }
 
     const dataObject = await fetchDataFile(url, fileXTemp, fileYTemp);
