@@ -4,11 +4,14 @@ import "../style/VirtualHendiInterface.css";
 import { saveAs } from "file-saver";
 
 function Spectrum({ data }) {
-  const chartRef = React.createRef();
-  let d = undefined;
+  useEffect(() => {
+    if (data) {
+      generateSpectrum();
+    }
+  });
 
   const generateSpectrum = () => {
-    return new Dygraph(chartRef.current, data, {
+    return new Dygraph(document.getElementById("spectrum"), data, {
       animatedZooms: true,
       xlabel: "Wavelength (cm<sup>-1</sup>)",
       ylabel: "Intensity",
@@ -18,10 +21,6 @@ function Spectrum({ data }) {
     });
   };
 
-  useEffect(() => {
-    d = generateSpectrum();
-  }, []);
-
   const downloadSpectrum = () => {
     const blob = new Blob([data], { type: "text/plain;charset=utf-8" });
     saveAs(blob, "spectrum.csv");
@@ -29,7 +28,7 @@ function Spectrum({ data }) {
 
   return (
     <div>
-      <div id="spectrum" ref={chartRef} />
+      <div id="spectrum" />
       <button onClick={downloadSpectrum}>Download Spectrum</button>
     </div>
   );
