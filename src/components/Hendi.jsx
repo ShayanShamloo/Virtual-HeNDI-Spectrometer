@@ -8,10 +8,12 @@ function Hendi({ id, seeOutside }) {
       <div >
         <div className={`hendi-box ${!seeOutside ? '' : 'transparent'}`}>
           {/* These SVGs are for example/placeholder purposes */}
-          <SVGComponent style={{top:'0'}} className='click-through' part='base' />
+          {/* <SVGComponent style={{top:'0'}} className='click-through' part='base' />
           <SVGComponent style={{top:'0'}} className='click-through' part='sourcechamber' click={() => {}}/> 
           <SVGComponent style={{top:'0'}} className='click-through' part='dopingchamber' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='detectionchamber'/>
+          <SVGComponent style={{top:'0'}} className='click-through' part='detectionchamber'/> */}
+          <SVGComponent style={{top:'0', stroke:'#fff0'}} className='click-through' part='laserexterior' /> 
+
         </div>
         <div className={`hendi-box ${seeOutside ? '' : 'transparent'}`} id={id}> 
           <SVGComponent style={{top:'0', stroke:'#fff0'}} className='click-through' part='laserexterior' /> 
@@ -24,6 +26,9 @@ function Hendi({ id, seeOutside }) {
           <SVGComponent style={{top:'0'}} className='click-through' part='sourcechamber' />
           <SVGComponent style={{top:'0'}} className='click-through' part='dopingchamber' />
           <SVGComponent style={{top:'0'}} className='click-through' part='detectionchamber'/>
+          <SVGComponent style={{top:'0'}} className='click-through' part='iongaugesource' />
+          <SVGComponent style={{top:'0'}} className='click-through' part='iongaugedope' />
+          <SVGComponent style={{top:'0'}} className='click-through' part='iongaugedetection' />
         </div>
       </div>
     );

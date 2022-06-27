@@ -8,6 +8,10 @@ import {ReactComponent as BaseSVG} from './svgs/hendi-not-clickable.svg';
 import {ReactComponent as SourceChamberSVG} from './svgs/hendi-source-chamber.svg';
 import {ReactComponent as DopingChamberSVG} from './svgs/hendi-doping-chamber.svg';
 import {ReactComponent as DetectionChamberSVG} from './svgs/hendi-detection-chamber.svg';
+import {ReactComponent as IonGauge3SVG} from './svgs/hendi-ion-gauge-3.svg';
+import {ReactComponent as IonGauge2SVG} from './svgs/hendi-ion-gauge-2.svg';
+import {ReactComponent as IonGauge1SVG} from './svgs/hendi-ion-gauge-1.svg';
+
 
 export const svgParts = {
     'laserexterior': LaserbeamExteriorSVG,
@@ -19,7 +23,10 @@ export const svgParts = {
     'rpump': RotarySVG,
     'sourcechamber': SourceChamberSVG,
     'dopingchamber': DopingChamberSVG,
-    'detectionchamber': DetectionChamberSVG
+    'detectionchamber': DetectionChamberSVG,
+    'iongaugesource': IonGauge3SVG,
+    'iongaugedope': IonGauge2SVG,
+    'iongaugedetection': IonGauge1SVG
 
 }
 
@@ -60,6 +67,18 @@ export const toolTips = {
     'detectionchamber': {
         header: 'Detection Chamber',
         text: 'Houses a mass spectrometer which is used to detect helium nanodroplets.',
+    },
+    'iongaugesource': {
+        header: 'Ion Gauge',
+        text: 'Pressure of the Source Chamber. It is relatively high due to the large amount of helium that flows through the nozzle.',
+    },
+    'iongaugedope': {
+        header: 'Ion Gauge',
+        text: 'Pressure of the Doping Chamber.',
+    },
+    'iongaugedetection': {
+        header: 'Ion Gauge',
+        text: 'Pressure of the Detection Chamber, which is similar to that maintained at CERN (close to the vacuum found on the Moons surface).',
     },
     'base': {
         header: '',
