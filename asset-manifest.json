@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Virtual-HeNDI-Spectrometer/static/css/main.9415b47c.css",
+    "main.js": "/Virtual-HeNDI-Spectrometer/static/js/main.3c5443c4.js",
+    "static/media/digital-7 (mono).ttf": "/Virtual-HeNDI-Spectrometer/static/media/digital-7 (mono).ae951a188b593952b384.ttf",
+    "static/media/hendi-rotary-pump.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-rotary-pump.373098976016ef0cea644827e85a10a7.svg",
+    "static/media/hendi-laser-symbol.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-laser-symbol.5fac6572c807edc62f26aef45d9d6f0d.svg",
+    "static/media/hendi-ion-gauge-3.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-ion-gauge-3.a23c6e01658ea4fa7c89268eac1f9ff6.svg",
+    "static/media/hendi-ion-gauge-2.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-ion-gauge-2.b348376424475f445183577453eb3baa.svg",
+    "static/media/hendi-ion-gauge-1.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-ion-gauge-1.ad490174ce4243e96277d878589e45d5.svg",
+    "static/media/hendi-not-clickable.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-not-clickable.489a721db9121919dc58290150b6fd5f.svg",
+    "static/media/hendi-source-chamber.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-source-chamber.11e6c787505a55ceca7dcb31ae2ea558.svg",
+    "static/media/hendi-detection-chamber.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-detection-chamber.806a6fb59343a5d6dc5ce8a9b85bfcc2.svg",
+    "static/media/hendi-doping-chamber.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-doping-chamber.f1323834d00c306e9480fb615e565778.svg",
+    "static/media/hendi-diffusion-doping-pump.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-diffusion-doping-pump.710fbc9ba6ab10d90bf2eddfe18f33bb.svg",
+    "static/media/hendi-diffusion-source-pump.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-diffusion-source-pump.586b54120d6d06f18b929f018376ee06.svg",
+    "static/media/hendi-laser-exterior-view.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-laser-exterior-view.38a1799a72ed6a5ebda3ce28d52c6ae2.svg",
+    "index.html": "/Virtual-HeNDI-Spectrometer/index.html",
+    "static/media/hendi-turbo-pump.svg": "/Virtual-HeNDI-Spectrometer/static/media/hendi-turbo-pump.861cd829dc42349e3fa696bb627fa278.svg",
+    "main.9415b47c.css.map": "/Virtual-HeNDI-Spectrometer/static/css/main.9415b47c.css.map",
+    "main.3c5443c4.js.map": "/Virtual-HeNDI-Spectrometer/static/js/main.3c5443c4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9415b47c.css",
+    "static/js/main.3c5443c4.js"
+  ]
+}
