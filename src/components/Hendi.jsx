@@ -1,37 +1,39 @@
 import React from "react";
 import "../style/Hendi.css";
-import SVGComponent from "./SVGComponents";
+import { useState } from "react";
+import { ReactComponent as Main } from "./HENDI_SVG/hendi-exterior-draft.svg";
+import { Dialog } from "@mui/material";
+import { imgSource, toolTips } from "../dictionaires/SVGLibrary";
+
+
+
+
 
 function Hendi({ id, seeOutside }) {
+  const [toggled, setToggled] = useState(false);
+  const [element, setElement] = useState(null);
 
-    return (
-      <div >
-        <div className={`hendi-box ${!seeOutside ? '' : 'transparent'}`}>
-          {/* These SVGs are for example/placeholder purposes */}
-          {/* <SVGComponent style={{top:'0'}} className='click-through' part='base' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='sourcechamber' click={() => {}}/> 
-          <SVGComponent style={{top:'0'}} className='click-through' part='dopingchamber' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='detectionchamber'/> */}
-          <SVGComponent style={{top:'0', stroke:'#fff0'}} className='click-through' part='laserexterior' /> 
+  const handleClick = (event) => {
+    console.log(element);
+    if (event.target.parentElement.id !== "instrument-window") {
+      setElement(event.target.parentElement.id);
+      setToggled(!toggled);
+    }
+  };
 
-        </div>
-        <div className={`hendi-box ${seeOutside ? '' : 'transparent'}`} id={id}> 
-          <SVGComponent style={{top:'0', stroke:'#fff0'}} className='click-through' part='laserexterior' /> 
-          <SVGComponent style={{top:'0'}} className='click-through' part='base' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='lasersymbol' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='rpump' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='ddpump' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='sdpump' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='tpump' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='sourcechamber' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='dopingchamber' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='detectionchamber'/>
-          <SVGComponent style={{top:'0'}} className='click-through' part='iongaugesource' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='iongaugedope' />
-          <SVGComponent style={{top:'0'}} className='click-through' part='iongaugedetection' />
-        </div>
-      </div>
-    );
+  return (
+    <div id="instrument-window">
+      <Main id="main" onClick={handleClick} />
+
+      {/* {element && (
+        <Dialog className="popup" onClose={handleClick} open={toggled}>
+          <h2>{toolTips[element].title}</h2>
+          <img src={imgSource[element]} className="example-image" alt="" />
+          <p>{toolTips[element].text}</p>
+        </Dialog>
+      )} */}
+    </div>
+  );
 }
 
 export default Hendi;
